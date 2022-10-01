@@ -594,11 +594,11 @@ section#record-section{
     /* background-color: green; */
 }
 .social-img{
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2rem;
+    height: 2rem;
     background-color:rgb(236, 236, 236);
     border-radius: 50%;
-    padding: 0.2rem;
+    padding: 0.5rem;
 }
 .social-img img{
     width: 100%;
@@ -627,6 +627,9 @@ section#record-section{
 .contact-content h4{
     margin-bottom: 0.3rem;
     color: rgb(156, 156, 156);
+}
+.support li{
+    margin: 0.6rem;
 }
 .newsletter-content p{
     margin-bottom: 1rem;
