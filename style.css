@@ -581,6 +581,30 @@ section#record-section{
 .footer-about-body{
     max-width: 20rem; 
 }
+.socials{
+    margin: 1.5rem 0;
+}
+.socials p{
+    color: rgb(156, 156, 156);
+}
+.social-links{
+    display: flex;
+    margin: 1rem 0;
+    gap: 0.5rem;
+    /* background-color: green; */
+}
+.social-img{
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color:rgb(236, 236, 236);
+    border-radius: 50%;
+    padding: 0.2rem;
+}
+.social-img img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
 .contact-img {
     width: 1.5rem;
 }
@@ -590,8 +614,8 @@ section#record-section{
 }
 .contact{
     display: flex;
-    gap: 0.5rem;
-    align-items: center;
+    gap: 0.9rem;
+    align-items: flex-start;
 }
 .location, .phone-no, .email{
   border-bottom: 1px solid rgb(236, 236, 236);
@@ -599,6 +623,10 @@ section#record-section{
 }
 .contact-content{
     max-width: 20rem; 
+}
+.contact-content h4{
+    margin-bottom: 0.3rem;
+    color: rgb(156, 156, 156);
 }
 .newsletter-content p{
     margin-bottom: 1rem;
@@ -719,18 +747,56 @@ section#record-section{
     
     .footer-container {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 3rem;
+        /* background-color: orange; */
+    }
+    .footer-title{
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+    .social-links{
+        margin: 1rem auto;
+        width: fit-content;
+        gap: 0.8rem;
+    }
+
+    .footer-about{
+        text-align: center;
+    }
+
+    .footer-about-body{
+        margin: 1rem auto;
+        max-width: 15rem;
+    }
+    .contact{
+        justify-content: center;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    .contact-content{
+        width: 10rem;
+        /* background-color: green; */
+    }
+    .contact-content p{
+        max-width: 10rem;
+        margin: auto;
+    }
+    .support {
+        text-align: center;
     }
     .location, .phone-no, .email{
         border-bottom: none;
     }
+    
     .newsletter-content p{
-       
+       max-width: 15rem;
+       margin: 0.4rem auto 1rem;
+       text-align: center;
     }
     .newsletter-content input, .newsletter-content button{
-        width: 60%;
-        margin: 0 0 1rem;
+        width: 80%;
+        margin: 0 auto 1rem;
     }
 }
 
@@ -752,6 +818,9 @@ section#record-section{
     }
 
     /* -------------------------------------------HERO SECTION------------------------------------ */
+    .navbar{
+        padding: 0.3 2rem;
+    }
     .hero-form{
         background-color: white;
         height: fit-content;
@@ -870,5 +939,19 @@ section#record-section{
     .testimonial-name{
         margin-top: 1rem;
     }
+
+    /* ---------------------------------------------------FOOTER SECTION-------------------------------- */
+    .footer-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    /* .footer-about-body{
+        margin: auto;
+        max-width: 15rem;
+    }
+    .social-links{
+        margin: 1rem auto;
+        width: fit-content;
+        gap: 0.8rem;
+    } */
     
 }
