@@ -1,0 +1,842 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.2);
+    height: fit-content;
+    width: 100%;
+    /* overflow-y: visible; */
+    /* z-index: 1000; */
+}
+/* -----------------------------------------------GENERAL STYLES--------------------------------- */
+section {
+    padding: 3rem 4rem;
+   
+}
+
+.section-title{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.section-title h1{
+    font-size: 3rem;
+    color: rgb(19, 32,60);
+    margin-bottom: 0.5rem;
+}
+.section-title p {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+.section-title h1::after, .section-title h1::before{
+    content: "";
+    display: block;
+    height: 0.2rem;
+    width: 5rem;
+    background-color: rgb(208, 146, 36);
+    margin: 0.2rem auto;
+}
+/* ---------------------------------------------HERO SECTION----------------------------------------- */
+#hero-section {
+    min-height: 100vh;
+    background-color: rgb(236, 236, 236);
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    padding: 0.2rem 3rem;
+    z-index: 100;
+    overflow: visible;
+    /* background-color: white; */
+}
+.navbar.active{
+    background-color: white;
+    box-shadow: 2px 8px 20px -1px rgba(0,0,0,0.75);
+-webkit-box-shadow: 2px 8px 20px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 8px 20px -1px rgba(0,0,0,0.75);
+}
+.navbar .logo {
+    width: 8rem;
+}
+.navbar .logo img {
+    width: 100%;
+    height: 100%;
+}
+.navlinks {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.navlinks li a:is(:link, :active, :visited){
+    text-decoration: none;
+    color: black;
+    width: 100%;
+
+}
+.navlinks li a:is(:link, :active, :visited).active{
+    color: rgb(208, 146, 36);
+}
+.close-nav {
+    display: none;
+}
+.burger-container {
+    display: none;
+}
+.burger{
+    background: rgb(19, 32,60);
+    width: 2rem;
+    height: 0.1rem;
+    margin: 0.6rem 0 0;
+}
+.hero-container {
+    margin: 5rem auto 0;
+    height: 100% ;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8rem;
+}
+.hero-title {
+    font-size: 2.5rem;
+    color: rgb(19, 32,60);
+    margin-bottom: 2rem;
+    max-width: 20rem;
+}
+.hero-body{
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin: 1rem 0;
+}
+.hero-form{
+    background-color: white;
+    height: 22rem;
+    width: 25rem;
+    height: 100%;
+    padding: 2rem 3rem;
+    box-shadow: -1px 8px 11px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 8px 11px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 8px 11px 0px rgba(0,0,0,0.75);
+    border-radius: 0.5rem;
+    margin: auto;
+}
+.sign-up, .login{
+    display: none;
+}
+.sign-up.active, .login.active{
+    display: block;
+}
+.sign-up h3, .login h3{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.sign-up input, .login input{
+    display: block;
+    padding: 0.7rem 1rem;
+    margin: 0.7rem 0;
+    width: 18rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(19, 32,60);
+    outline: none;
+    
+}
+.sign-up input[type = submit], .login input[type = submit]{
+    background-color: rgb(208, 146, 36);
+    color: white;
+    width: fit-content;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    outline: none;
+    border-radius: 2rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+}
+.sign-up input[type = submit]:hover, .login input[type = submit]:hover{
+    background-color: white;
+    color: rgb(208, 146, 36);
+    border: 1px solid rgb(208, 146, 36);
+}
+.sign-up p, .login p{
+    font-size: 0.9rem;
+}
+.sign-up-link, .login-link{
+    color: rgb(208, 146, 36);
+}
+.password-group{
+  position: relative;
+  z-index: 50px;
+  width: fit-content;
+}
+.show-password, .hide-password{
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 18px;
+  right: 7px;
+  background-color: white;
+  display: none;
+  z-index : 50;
+  cursor: pointer;
+}
+.show-password.active, .hide-password.active{
+  display: block;
+}
+.show-password img, .hide-password img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  
+}
+.hero-buttons{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+.hero-buttons button{
+    display: block;
+    padding: 1rem 1.8rem;
+    border-radius: 2rem;
+    outline: none;
+    color: rgb(208, 146, 36);
+    border: 1px solid rgb(208, 146, 36);
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+    
+    
+}
+.hero-buttons button.button1{
+    background-color: rgb(208, 146, 36);
+    color: white;
+}
+.hero-buttons button.button1:hover {
+    background-color: white;
+    color: rgb(208, 146, 36);
+    border: 1px solid rgb(208, 146, 36);
+}
+.hero-buttons button.button2:hover{
+    background-color: rgb(208, 146, 36);
+    color: white;
+    border: 1px solid rgb(208, 146, 36);
+}
+
+
+/* ---------------------------------------------------------SERVICES SECTION-------------------------------------------------- */
+
+.services-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+.service-img{
+    width: 4rem;
+    margin: auto;
+}
+.service-img img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.service-contents {
+    text-align: center;
+}
+.service-head {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    color: rgb(19, 32,60);
+}
+.service-contents p{
+    line-height: 1.5rem;
+}
+
+/* -------------------------------------------------------------FEATURES SECTION-------------------------------------------------------- */
+section#features-section{
+   background-color: rgb(208, 146, 36);
+   
+}
+.features-title{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.features-title h1{
+    font-size: 3rem;
+    color: rgb(19, 32,60);
+    margin-bottom: 0.5rem;
+}
+.features-title p {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+.features-title h1::after, .features-title h1::before{
+    content: "";
+    display: block;
+    height: 0.2rem;
+    width: 5rem;
+    background-color: rgb(236, 236, 236);
+    margin: auto;
+}
+.features-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+.feature-img{
+    width: 6rem;
+    height: 6rem;
+    /* background-color: orange; */
+}
+.feature-img img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.feature-head {
+    color: rgb(19, 32,60);
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.feature-body{
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+}
+/* ---------------------------------------------------------ABOUT SECTION---------------------------------------------------------- */
+#about-section{
+    padding: 0;
+}
+.about-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.about-img {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+}
+.about-img img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.about-contents {
+    padding: 4rem;
+    background-color: rgb(236, 236, 236);
+}
+.about-title{
+   margin-bottom: 2rem;
+   /* background-color: orange; */
+   /* width: fit-content; */
+   
+}
+.about-title p {
+    font-size: 1.2rem;
+    /* text-align: center; */
+}
+.about-title h2{
+    font-size: 3rem;
+    color: rgb(19, 32,60);
+    margin-bottom: 0.5rem;
+}
+.about-title h2::after, .about-title h2::before{
+    content: "";
+    display: block;
+    height: 0.2rem;
+    width: 4rem;
+    background-color: rgb(208, 146, 36);
+    margin: 0 3rem;
+}
+.about-body{
+    line-height: 1.6rem;
+    text-align: left;
+    max-width: 40rem;
+    margin: auto;
+}
+
+/* ----------------------------------------------RECORD SECTION-------------------------------------------- */
+section#record-section{
+    padding: 6rem 4rem;
+   background-color: rgb(19, 32,60);
+}
+.record-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+}
+.record{
+    width: 100%;
+    text-align: center;
+}
+.record-logo{
+    width: 6rem;
+    height: 6rem;
+    margin: auto;
+    background-color: rgb(236, 236, 236);
+    padding: 1rem;
+    border-radius: 50%;
+}
+.record-logo img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.record-no{
+    color: rgb(208, 146, 36);
+    font-size: 2rem;
+}
+.record-text{
+    font-size: 1.1rem;
+    color: rgba(236, 236, 236, 0.4);
+}
+
+/* -------------------------------------------------PRICING SECTION----------------------------------- */
+#pricing-section{
+    background-color: rgb(236, 236, 236);
+}
+.pricing-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.pricing, .pricing2{
+    /* width: 100%; */
+    background-color: white;
+    text-align: center;
+    padding: 4rem 0 2rem;
+    color: rgb(19, 32,60);
+    width: 18rem;
+    margin: auto;
+    /* width: fit-content; */
+}
+.pricing2{
+    background-color: rgb(19, 32,60);
+    color: white;
+    position: relative;
+}
+.popular{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(208, 146, 36);
+    padding: 1rem 3rem;
+    letter-spacing: 0.09rem;
+}
+.price-title, .price-title2{
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+.price-title::after, .price-title2::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 0.2rem;
+    background-color: rgb(19, 32,60);
+    margin: 1rem auto 0;
+}
+.price-title2::after{
+    background-color: rgb(236, 236, 236);
+}
+.price-amount h1{
+    font-size: 3rem;
+}
+.price-amount h1 sup{
+    font-size: 1.5rem;
+}
+.price-amount p{
+    font-size: 1.2rem;
+    margin: 0.7rem 0;
+}
+.price-features, .price-features2{
+    /* background: red; */
+    padding: 2rem;
+}
+.price-features p, .price-features2 p{
+    border-bottom: 1px solid rgb(19, 32,60);
+    padding: 0.5rem 0;
+    
+}
+.price-features2 p{
+    border-bottom: 1px solid rgb(236, 236, 236);
+    color: rgb(236, 236, 236);
+}
+.price-features .storage-no, .price-features2 .storage-no{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.get-started, .get-started2{
+    margin: 1rem 0 0;
+    border: none;
+    outline: none;
+}
+.get-started a, .get-started2 a{
+    width: 100%;
+    padding: 0.8rem 2rem;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    background: rgb(19, 32,60);
+    color: white;
+    outline: none;
+}
+.get-started2 a{
+    background-color: rgb(236, 236, 236);
+    color: rgb(19, 32,60);
+}
+
+/* ---------------------------------------------TESTIMONIAL SECTION------------------------------------------ */
+.testimonial-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+.testimonial {
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding:  3rem;
+    border-radius: 2rem;
+    width: fit-content;
+   
+}
+.testimonial-img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.testimonial-img img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.testimonial-body{
+    max-width: 15rem;
+    line-height: 1.2rem;
+}
+.testimonial-name{
+    margin-top: 1rem;
+}
+
+/* ------------------------------------------FOOTER SECTION----------------------------------------- */
+#footer-section{
+    background-color: rgb(19, 32,60);
+    color: rgb(236, 236, 236);
+}
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+}
+.footer-title{
+    color: rgb(208, 146, 36);
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+.footer-about{
+    color: rgb(236, 236, 236);
+}
+.footer-about-body{
+    max-width: 20rem; 
+}
+.contact-img {
+    width: 1.5rem;
+}
+.contact-img img{
+    height: 100%;
+    width: 100%;
+}
+.contact{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.location, .phone-no, .email{
+  border-bottom: 1px solid rgb(236, 236, 236);
+    padding: 0.7rem 0;  
+}
+.contact-content{
+    max-width: 20rem; 
+}
+.newsletter-content p{
+    margin-bottom: 1rem;
+    max-width: 20rem;
+}
+.newsletter-content input, .newsletter-content button{
+    display: block;
+    width: 100%;
+    margin: 0.5rem auto;
+    padding: 0.7rem 1rem;
+    border: none;
+    outline: none;
+    background-color: rgb(236, 236, 236);
+}
+.newsletter-content button{
+    background-color: rgb(208, 146, 36);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    
+}
+
+
+/* --------------------------------------------------MEDIA QUERY FOR MEDIUM DEVICES--------------------------- */
+@media screen and (max-width : 1024px){
+    /* -------------------------------------------HERO SECTION------------------------------------ */
+    .hero-container{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3rem;
+    }
+    .navlinks {
+        position: absolute;
+        top: 0;
+        right: 0;
+        flex-direction: column;
+        overflow: visible;
+        height: 100vh;
+        background: white;
+        width: 15rem;
+        transform: translateX(500px);
+        animation: displayLinks 2s ;
+    }
+    .navlinks.active {
+        transform: translateX(0px);
+    }
+    .close-nav {
+        display: block;
+        /* background: blue; */
+        width: 100%;
+        text-align: right;
+        font-size: 2rem;
+        padding: 0.4rem;
+    }
+    .burger-container{
+        display: block;
+    }
+    .hero-title {
+        text-align: center;
+        margin: auto;
+    }
+    .hero-body{
+        margin-left: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+    .hero-buttons button{
+        margin: 2rem auto;
+    }
+
+    /* ------------------------------------------------------SERVICES SECTION------------------------------- */
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* ----------------------------------------------------------ABOUT SECTION--------------------------------- */
+    #about-section{
+        padding: 3rem 4rem;
+    }
+    .about-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .about-contents {
+        background-color: white;
+        padding: 0;
+        text-align: center;
+    }
+    .about-title h2::after, .about-title h2::before{
+        margin: auto;
+    }
+    .about-body {
+        text-align: center;
+    }
+    /* -------------------------------------------------------------RECORD SECTION----------------------------------- */
+    .record-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .record-no{
+        font-size: 1.5rem;
+    }
+    .record-text {
+        font-size: 0.9rem;
+    }
+    /* ---------------------------------------------------------------PRICING SECTION--------------------------------- */
+    .pricing-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    /* ---------------------------------------------TESTIMONIAL SECTION------------------------------------------ */
+    .testimonial-container{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3rem;
+    }
+    .testimonial{
+        margin: auto;
+    }
+    /* ----------------------------------------------FOOTER SECTION----------------------------------------------- */
+    
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3rem;
+    }
+    .location, .phone-no, .email{
+        border-bottom: none;
+    }
+    .newsletter-content p{
+       
+    }
+    .newsletter-content input, .newsletter-content button{
+        width: 60%;
+        margin: 0 0 1rem;
+    }
+}
+
+
+
+/* ---------------------------------------------------MEDIA QUERY FOR SMALL DEVICES------------------------------------ */
+@media screen and (max-width : 600px){
+    section{
+        padding: 4rem 2rem;
+    }
+    .section-title h1{
+        font-size: 2.5rem;
+    }
+    .section-title p {
+        font-size: 1rem;
+    }
+    .section-title h1::after, .section-title h1::before{
+        width: 4rem;
+    }
+
+    /* -------------------------------------------HERO SECTION------------------------------------ */
+    .hero-form{
+        background-color: white;
+        height: fit-content;
+        width: fit-content;
+        padding: 2rem;
+    }
+    .sign-up h3, .login h3{
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .sign-up input, .login input{
+        width: 14rem;
+    }
+    .sign-up p, .login p{
+        font-size: 0.8rem;
+    }
+    .sign-up-link, .login-link{
+        color: rgb(208, 146, 36);
+    }
+    .hero-container{
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 3rem ;
+        overflow: hidden;
+    }
+    .hero-title{
+        font-size: 1.5rem;
+        text-align: center;
+        
+    }
+    .hero-body {
+        text-align: center;
+        font-size: 1rem;
+    }
+    .hero-buttons{
+        gap: 0.5rem;
+    }
+    
+
+    /* ------------------------------------------------------SERVICES SECTION------------------------------- */
+    .services-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .services-title h1{
+        font-size: 2.5rem;
+    }
+    .services-title p{
+        font-size: 1.1rem;
+    }
+
+    /* ------------------------------------------------------FEATURES SECTION---------------------------------- */
+    .features-title h1{
+        font-size: 2.5rem;
+    }
+    .features-title p {
+        font-size: 1;
+    }
+    .features-title h1::after, .features-title h1::before{
+        width: 4rem;
+    }
+    .features-container{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+    
+    /* -------------------------------------------------------------ABOUT SECTION------------------------------------ */
+    .about-img {
+        padding: 0;
+        width: 250px;
+        height: 250px;
+        margin: 0 auto 2rem;
+    }
+
+    /* -------------------------------------------------------------RECORD SECTION----------------------------------- */
+    .record-container{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3rem;
+    }
+    .record-logo {
+        width: 5rem;
+        height: 5rem;
+    }
+    .record-text{
+        font-size: 1.1rem;
+        color: rgba(236, 236, 236, 0.4);
+    }
+    /* ---------------------------------------------------------------PRICING SECTION--------------------------------- */
+    .pricing-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    /* ---------------------------------------------TESTIMONIAL SECTION------------------------------------------ */
+    .testimonial-container{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3rem;
+    }
+    .testimonial {
+        background-color: rgb(236, 236, 236);
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding:  1rem;
+        border-radius: 2rem;
+        width: fit-content;
+        margin: auto;
+       
+    }
+    .testimonial-body{
+        line-height: 1.2rem;
+    }
+    .testimonial-name{
+        margin-top: 1rem;
+    }
+    
+}
