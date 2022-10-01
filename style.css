@@ -123,7 +123,6 @@ section {
 }
 .hero-form{
     background-color: white;
-    height: 22rem;
     width: 25rem;
     height: 100%;
     padding: 2rem 3rem;
@@ -153,6 +152,9 @@ section {
     border: 1px solid rgb(19, 32,60);
     outline: none;
     
+}
+.login{
+    /* margin: 2rem 0; */
 }
 .sign-up input[type = submit], .login input[type = submit]{
     background-color: rgb(208, 146, 36);
@@ -202,10 +204,30 @@ section {
   display: block;
   
 }
+.question-group {
+    display: flex;
+    align-items: center;
+    /* background-color: rgb(208, 146, 36); */
+    max-width: 18rem;
+    justify-content: space-between;
+    margin-bottom: 0.2rem;
+    /* padding: 0 1rem; */
+}
+.checkbox-group{
+    display: flex;
+    align-items: center;
+}
+.checkbox-group input[type = checkbox]{
+    width: fit-content;
+    margin: 0 0.2rem;
+}
 .hero-buttons{
     display: flex;
     gap: 1rem;
     width: 100%;
+}
+.forgot-password{
+    color: rgb(208, 146, 36);
 }
 .hero-buttons button{
     display: block;
@@ -297,7 +319,9 @@ section#features-section{
 .feature-img{
     width: 6rem;
     height: 6rem;
-    /* background-color: orange; */
+    background-color: rgb(19, 32,60);
+    padding: 1rem;
+    border-radius: 50%;
 }
 .feature-img img{
     width: 100%;
@@ -306,7 +330,7 @@ section#features-section{
     object-fit: cover;
 }
 .feature-head {
-    color: rgb(19, 32,60);
+    color: rgb(12, 63, 63);
     margin: 1rem 0;
     font-size: 1.4rem;
     font-weight: 600;
@@ -666,6 +690,8 @@ section#record-section{
     .about-body {
         text-align: center;
     }
+    /* ----------------------------------------------------------FEATURES SECTION-------------------------------- */
+
     /* -------------------------------------------------------------RECORD SECTION----------------------------------- */
     .record-container{
         grid-template-columns: repeat(2, 1fr);
@@ -781,14 +807,20 @@ section#record-section{
         font-size: 2.5rem;
     }
     .features-title p {
-        font-size: 1;
+        font-size: 1rem;
     }
     .features-title h1::after, .features-title h1::before{
         width: 4rem;
     }
     .features-container{
         grid-template-columns: repeat(1, 1fr);
-        gap: 1rem;
+        gap: 3rem;
+    }
+    .feature{
+        text-align: center;
+    }
+    .feature-img {
+        margin: auto;
     }
     
     /* -------------------------------------------------------------ABOUT SECTION------------------------------------ */

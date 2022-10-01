@@ -7,6 +7,7 @@ const loginLink = document.querySelector(".login-link")
 const signUp = document.querySelector(".sign-up")
 const login = document.querySelector(".login")
 const password = document.querySelector("#password")
+const confirmPassword = document.querySelector("#confirm-password")
 const showPassword = document.querySelector(".show-password")
 const hidePassword = document.querySelector(".hide-password")
 const activePage = window.location.hash
@@ -44,7 +45,7 @@ window.onscroll = function() {
     sections.forEach(section => {
         const sectionTop = section.offsetTop
         const sectionHeight = section.clientHeight
-        if(pageYOffset >= sectionTop) {
+        if(pageYOffset >= clien) {
             current = section.getAttribute("id")
             // console.log(pageYOffset)
         }
