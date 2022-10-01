@@ -530,16 +530,21 @@ section#record-section{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
+    margin: 1.5rem 0;
 }
 .testimonial {
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(170, 168, 168);
     display: flex;
     align-items: flex-start;
     gap: 2rem;
     padding:  3rem;
     border-radius: 2rem;
     width: fit-content;
+    transition: all 400ms ease-in-out;
    
+}
+.testimonial:hover{
+    background-color: rgb(221, 220, 220);
 }
 .testimonial-img{
     width: 70px;
@@ -554,10 +559,18 @@ section#record-section{
 }
 .testimonial-body{
     max-width: 15rem;
-    line-height: 1.2rem;
+    line-height: 1.4rem;
+    
 }
 .testimonial-name{
-    margin-top: 1rem;
+    margin: 1rem 0 0.2rem;
+    color: rgb(19, 32,60);
+}
+.star-rating{
+    display: flex;
+}
+.star-rating img{
+    width: 1rem;
 }
 
 /* ------------------------------------------FOOTER SECTION----------------------------------------- */
@@ -937,7 +950,7 @@ section#record-section{
        
     }
     .testimonial-body{
-        line-height: 1.2rem;
+        /* line-height: 1.2rem; */
     }
     .testimonial-name{
         margin-top: 1rem;
