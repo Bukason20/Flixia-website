@@ -18,7 +18,7 @@ const aboutSection = document.querySelector(".about-section")
 
 console.log(activePage)
 
-// Select Navlink onLoad and When Clicked
+// Select Navigation link when the page is onLoad and When it is  Clicked
 navLinksHash.forEach((link) => {
     if(link.href.includes(`${activePage}`) && activePage !== ""){
         link.classList.add("active")
@@ -29,7 +29,7 @@ navLinksHash.forEach((link) => {
     link.addEventListener("click", function(){
         navLinksHash.forEach(li => li.classList.remove("active"))
         this.classList.add("active")
-        // navLinks.classList.remove("active")
+        navLinks.classList.remove("active")
     })
     
 })
@@ -37,37 +37,30 @@ navLinksHash.forEach((link) => {
 
 
 
-// Change Navbar Color when scrolled
-window.onscroll = function() {
+// Change Navbar Color when scrolled and select navigation link when scrolled
+window.addEventListener("scroll", () => {
     if(window.scrollY > 50){
         navBar.classList.add("active")
     }else if (window.scrollY < 50){
         navBar.classList.remove("active")
     }
 
-    let current = "";
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop
-        const sectionHeight = section.clientHeight
-        if(pageYOffset >= sectionTop) {
-            current = section.getAttribute("id")
-            // console.log(pageYOffset)
+    sections.forEach((section) => {
+        let top = window.scrollY
+        let offset = section.offsetTop - 150
+        let height = section.offsetHeight
+        let id = section.getAttribute("id");
+
+        if(top >= offset && top < offset + height){
+            navLinksHash.forEach(links => {
+                links.classList.remove("active");
+                document.querySelector("nav ul a[href*=" + id + "]").classList.add("active")
+            })
         }
     })
 
-    // console.log(current)
-    // navLinksHash.forEach(li => {
-    //     li.classList.remove("active")
-    //     if(li.classList.contains(current)){
-    //         li.classList.add("active")
-    //     }else if(current === "record-section"){
-    //         aboutSection.classList.add("active")
-    //     }
-    //     // console.log(li)
-    // })
 
-
-}
+})
 
 // Open Navbar
 burgerContainer.addEventListener("click", () => {
@@ -79,21 +72,26 @@ closeNav.addEventListener("click", () => {
     navLinks.classList.remove("active")
 })
 
+//Change the form to Sign up form
 signUpLink.addEventListener("click", () => {
     login.classList.remove("active");
     signUp.classList.add("active")
 })
+
+// Change the form to login form
 loginLink.addEventListener("click", () => {
     login.classList.add("active");
     signUp.classList.remove("active")
 })
 
+// show password function
 showPassword.addEventListener("click", () => {
   password.type = "text"
   showPassword.classList.remove("active")
   hidePassword.classList.add("active")
 })
 
+// Hide password function
 hidePassword.addEventListener("click", () => {
   password.type = "password"
 

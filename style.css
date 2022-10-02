@@ -19,6 +19,7 @@
 section {
     padding: 3rem 4rem;
     overflow-y: none;
+    height: fit-content;
    
 }
 
