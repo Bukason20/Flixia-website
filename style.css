@@ -494,7 +494,7 @@ section#record-section{
 .price-features p, .price-features2 p{
     border-bottom: 1px solid rgb(19, 32,60);
     padding: 0.5rem 0;
-    
+    color: rgb(133, 133, 133); 
 }
 .price-features2 p{
     border-bottom: 1px solid rgb(236, 236, 236);
@@ -503,6 +503,10 @@ section#record-section{
 .price-features .storage-no, .price-features2 .storage-no{
     text-transform: uppercase;
     font-weight: 600;
+    color: rgb(19, 32,60);
+}
+.price-features2 .storage-no{
+    color: white;
 }
 .get-started, .get-started2{
     margin: 1rem 0 0;
@@ -939,6 +943,7 @@ section#record-section{
     .feature-img {
         margin: auto;
     }
+    
     
     /* -------------------------------------------------------------ABOUT SECTION------------------------------------ */
     .about-img {
