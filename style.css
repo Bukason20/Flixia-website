@@ -573,6 +573,37 @@ section#record-section{
     width: 1rem;
 }
 
+/* ---------------------------------------------CONTACT SECTION---------------------------------------- */
+#contact-section {
+    /* background-color: rgb(236, 236, 236); */
+    background-color: rgb(75, 74, 74);
+    padding: 0;
+}
+.contact-container{
+    display: flex;
+    /* gap: 2rem; */
+    align-items: center;
+    justify-content: center;
+}
+.contact-us-img:nth-child(1){
+    border-left: 1px solid black;
+}
+.contact-us-img {
+    width: 11rem;
+    height: 11rem;
+    padding: 4rem;
+    border-right: 1px solid black;
+    /* background-color: green; */
+}
+.contact-us-img img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: all 400ms ease-in-out;
+}
+.contact-us-img img:hover{
+    transform: translateY(-0.6rem);
+}
 /* ------------------------------------------FOOTER SECTION----------------------------------------- */
 #footer-section{
     background-color: rgb(19, 32,60);
@@ -934,26 +965,32 @@ section#record-section{
         grid-template-columns: repeat(1, 1fr);
     }
     /* ---------------------------------------------TESTIMONIAL SECTION------------------------------------------ */
-    .testimonial-container{
-        grid-template-columns: repeat(1, 1fr);
-        gap: 3rem;
-    }
     .testimonial {
-        background-color: rgb(236, 236, 236);
-        display: flex;
-        align-items: flex-start;
         gap: 1rem;
         padding:  1rem;
-        border-radius: 2rem;
-        width: fit-content;
         margin: auto;
-       
+
     }
     .testimonial-body{
         /* line-height: 1.2rem; */
     }
     .testimonial-name{
         margin-top: 1rem;
+    }
+
+    /* ---------------------------------------------------CONTACT SECTION------------------------------- */
+    .contact-us-img {
+        width: 4.5rem;
+        height: 4.5rem;
+        padding: 1.5rem;
+        border-right: 1px solid black;
+        /* background-color: green; */
+    }
+    .contact-us-img img{
+        width: 100%;
+        height: 100%;
+        display: block;
+        
     }
 
     /* ---------------------------------------------------FOOTER SECTION-------------------------------- */
