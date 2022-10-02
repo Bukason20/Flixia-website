@@ -36,7 +36,6 @@ navLinksHash.forEach((link) => {
 
 
 
-
 // Change Navbar Color when scrolled and select navigation link when scrolled
 window.addEventListener("scroll", () => {
     if(window.scrollY > 50){
@@ -54,7 +53,13 @@ window.addEventListener("scroll", () => {
         if(top >= offset && top < offset + height){
             navLinksHash.forEach(links => {
                 links.classList.remove("active");
-                document.querySelector("nav ul a[href*=" + id + "]").classList.add("active")
+                if(links.href.includes(id)){
+                    links.classList.add("active")
+                }if(id === "record-section"){
+                    navLinksHash[3].classList.add("active")
+                }if(id === "footer-section"){
+                    navLinksHash[6].classList.add("active")
+                }
             })
         }
     })
