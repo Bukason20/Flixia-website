@@ -1,3 +1,4 @@
+const body = document.querySelector("body")
 const navBar = document.querySelector(".navbar")
 const burgerContainer = document.querySelector(".burger-container")
 const navLinks = document.querySelector(".navlinks")
@@ -17,6 +18,7 @@ const aboutSection = document.querySelector(".about-section")
 
 console.log(activePage)
 
+// Select Navlink onLoad and When Clicked
 navLinksHash.forEach((link) => {
     if(link.href.includes(`${activePage}`) && activePage !== ""){
         link.classList.add("active")
@@ -34,6 +36,8 @@ navLinksHash.forEach((link) => {
 
 
 
+
+// Change Navbar Color when scrolled
 window.onscroll = function() {
     if(window.scrollY > 50){
         navBar.classList.add("active")
@@ -45,30 +49,32 @@ window.onscroll = function() {
     sections.forEach(section => {
         const sectionTop = section.offsetTop
         const sectionHeight = section.clientHeight
-        if(pageYOffset >= clien) {
+        if(pageYOffset >= sectionTop) {
             current = section.getAttribute("id")
             // console.log(pageYOffset)
         }
     })
 
     // console.log(current)
-    navLinksHash.forEach(li => {
-        li.classList.remove("active")
-        if(li.classList.contains(current)){
-            li.classList.add("active")
-        }else if(current === "record-section"){
-            aboutSection.classList.add("active")
-        }
-        // console.log(li)
-    })
+    // navLinksHash.forEach(li => {
+    //     li.classList.remove("active")
+    //     if(li.classList.contains(current)){
+    //         li.classList.add("active")
+    //     }else if(current === "record-section"){
+    //         aboutSection.classList.add("active")
+    //     }
+    //     // console.log(li)
+    // })
 
 
 }
 
+// Open Navbar
 burgerContainer.addEventListener("click", () => {
     navLinks.classList.add("active")
 })
 
+// Close Navbar
 closeNav.addEventListener("click", () => {
     navLinks.classList.remove("active")
 })

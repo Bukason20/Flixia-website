@@ -62,12 +62,22 @@ section {
     z-index: 100;
     overflow: visible;
     /* background-color: white; */
+    
 }
 .navbar.active{
     background-color: white;
     box-shadow: 2px 8px 20px -1px rgba(0,0,0,0.75);
--webkit-box-shadow: 2px 8px 20px -1px rgba(0,0,0,0.75);
--moz-box-shadow: 2px 8px 20px -1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 8px 20px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 8px 20px -1px rgba(0,0,0,0.75);
+    animation: displayNav 500ms ease-in-out forwards;
+}
+
+@keyframes displayNav {
+    from {
+        opacity: 0;
+    }to {
+        opacity: 1;
+    }
 }
 .navbar .logo {
     width: 8rem;
@@ -726,8 +736,7 @@ section#record-section{
     }
     .close-nav {
         display: block;
-        /* background: blue; */
-        width: 100%;
+         margin-left: 12rem;
         text-align: right;
         font-size: 2rem;
         padding: 0.4rem;
