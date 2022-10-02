@@ -795,6 +795,13 @@ section#record-section{
     .testimonial{
         margin: auto;
     }
+    /* --------------------------------------------CONTACT SECTION----------------------------------------------- */
+    .contact-us-img:nth-child(1){
+        border-left: none;
+    }
+    .contact-us-img:nth-child(4){
+        border-right: none;
+    }
     /* ----------------------------------------------FOOTER SECTION----------------------------------------------- */
     
     .footer-container {
@@ -990,12 +997,7 @@ section#record-section{
         height: 6rem;
         padding: 2rem;
     }
-    .contact-us-img:nth-child(1){
-        border-left: none;
-    }
-    .contact-us-img:nth-child(4){
-        border-right: none;
-    }
+    
     
     /* ---------------------------------------------------FOOTER SECTION-------------------------------- */
     .footer-container {
