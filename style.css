@@ -10,12 +10,13 @@ section {
     padding: 3rem 4rem;
     overflow-y: none;
     height: fit-content;
-   
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .section-title{
     text-align: center;
     margin-bottom: 2rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .section-title h1{
     font-size: 3rem;
@@ -117,7 +118,7 @@ section {
     font-size: 2.5rem;
     color: rgb(19, 32,60);
     margin-bottom: 2rem;
-    max-width: 20rem;
+    max-width: 25rem;
 }
 .hero-body{
     font-size: 1.2rem;
@@ -219,39 +220,44 @@ section {
     width: fit-content;
     margin: 0 0.2rem;
 }
+
+.forgot-password{
+    color: rgb(208, 146, 36);
+}
 .hero-buttons{
     display: flex;
     gap: 1rem;
     width: 100%;
 }
-.forgot-password{
-    color: rgb(208, 146, 36);
-}
 .hero-buttons button{
     display: block;
-    padding: 1rem 1.8rem;
     border-radius: 2rem;
     outline: none;
-    color: rgb(208, 146, 36);
     border: 1px solid rgb(208, 146, 36);
     cursor: pointer;
-    transition: all 400ms ease-in-out;
-    
-    
 }
-.hero-buttons button.button1{
-    background-color: rgb(208, 146, 36);
+.hero-buttons button a{
+    width: 100%;
+    display: block;
+    padding: 1rem 1.8rem;
     color: white;
+    text-decoration: none;
+    background-color: rgb(208, 146, 36);
+    font-weight: 600;
+    font-size: 1;
+    transition: all 400ms ease-in-out;
 }
-.hero-buttons button.button1:hover {
+.hero-buttons button a:hover{
     background-color: white;
     color: rgb(208, 146, 36);
-    border: 1px solid rgb(208, 146, 36);
 }
-.hero-buttons button.button2:hover{
+.hero-buttons button.button2 a{
+    background-color: white;
+    color: rgb(208, 146, 36);
+}
+.hero-buttons button.button2 a:hover {
     background-color: rgb(208, 146, 36);
     color: white;
-    border: 1px solid rgb(208, 146, 36);
 }
 
 

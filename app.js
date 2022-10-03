@@ -9,6 +9,7 @@ const signUp = document.querySelector(".sign-up")
 const login = document.querySelector(".login")
 const password = document.querySelector("#password")
 const confirmPassword = document.querySelector("#confirm-password")
+const errorMessage = document.querySelector(".error-message")
 const showPassword = document.querySelector(".show-password")
 const hidePassword = document.querySelector(".hide-password")
 const activePage = window.location.hash
@@ -33,8 +34,6 @@ navLinksHash.forEach((link) => {
     })
     
 })
-
-
 
 // Change Navbar Color when scrolled and select navigation link when scrolled
 window.addEventListener("scroll", () => {
